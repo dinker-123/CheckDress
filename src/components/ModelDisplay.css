@@ -1,0 +1,106 @@
+.model-display {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 2/3;
+  }
+  
+  .fabrics-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .model-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .model-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+  
+  .shirt-fabric {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    clip-path: polygon(
+      35% 10%, 65% 10%,
+      65% 40%, 35% 40%,
+      35% 10%
+    );
+    opacity: 0.95;
+    mix-blend-mode: multiply;
+  }
+  
+  .pant-fabric {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    clip-path: polygon(
+      35% 40%, 65% 40%,
+      60% 97%, 40% 97%,
+      35% 40%
+    );
+    opacity: 0.95;
+    mix-blend-mode: multiply;
+  }
+  
+  .upload-btn {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .upload-btn input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    opacity: 0;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .preview-fabric {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 640px) {
+    .shirt-area,
+    .pant-area {
+      left: 25%;
+      width: 50%;
+    }
+  }
+  

@@ -1,0 +1,239 @@
+/* General page styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+}
+
+/* Main container */
+.tryon-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Back button */
+.tryon-container button {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tryon-container button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: left 0.4s ease-in-out;
+}
+
+.tryon-container button:hover::before {
+  left: 125%;
+}
+
+.tryon-container button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Upload section */
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.upload-section label {
+  font-weight: bold;
+  display: block;
+  margin: 1rem 0 0.3rem;
+  color: #333;
+}
+
+input[type="file"] {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Model container */
+.model-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 2 / 3;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Model image */
+.model-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Shirt fabric overlay */
+.shirt-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.95;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Pant fabric overlay */
+.pant-area {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.85;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Upload button wrapper */
+.upload-btn {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.upload-btn input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  opacity: 0;
+  cursor: pointer;
+  display: block;
+}
+
+/* Fabric preview circle */
+.preview-fabric {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Home Page Styling */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-icon {
+  font-size: 1.4rem;
+}
+
+/* Logo styles */
+.logo-container {
+  margin-bottom: 1rem;
+}
+
+.brand-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .model-container {
+    width: 90%;
+  }
+
+  .shirt-area,
+  .pant-area {
+    width: 100%;
+    left: 0;
+  }
+
+  .tryon-container button {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .home-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
